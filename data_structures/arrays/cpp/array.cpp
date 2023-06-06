@@ -106,10 +106,24 @@ void Array<T>::remove(T* element) {
 
 template <typename T>
 void Array<T>::resize(size_t newCapacity) {
-    T* newArray = T[newCapacity];
+    T* newArray = new T[newCapacity];
     for (size_t i = 0; i < newCapacity; i++) {
         newArray[i] = _data[i];
     }
     delete [] _data;
     _data = newArray;
+}
+
+template <typename T>
+T& Array<T>::operator[](size_t index) const {
+    assert(i >= 0 && i <= _size);
+    return _data[i];
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os, Array<T>& array) {
+    for (size_t i = 0; i < array->size(); i++) {
+        // Need to override [] operator.
+    }
+    return os;
 }

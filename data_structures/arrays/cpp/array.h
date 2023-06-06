@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ostream>
 
 template <typename T>
 class Array {
@@ -27,6 +28,9 @@ public:
     // Searches for a given item, then removes it.
     void remove(T* element);
 
+    // Override the index operator.
+    T& operator[](size_t index) const;
+
 private:
     size_t          _size;
     size_t          _capacity;
@@ -38,3 +42,6 @@ private:
     void resize(size_t newCapacity);
     // Scans the array for null pointers and shrinks the array by removing them.
 };
+
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const Array<T>& array);
