@@ -3,6 +3,11 @@
 
 // Main function that accepts command line arguments
 int main(int argc, char** argv) {
-    std::cout << "Hello, World!" << std::endl;
+    Array<int> *arr = new Array<int>();
+    
+    std::cout << arr;
+
+    delete arr;
+    
     return 0;
 }

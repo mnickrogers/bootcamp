@@ -91,6 +91,9 @@ iOSInjectionProject/
 
 # C/C++
 
+# Exclude my unit tests directory
+test/
+
 # Prerequisites
 *.d
 
