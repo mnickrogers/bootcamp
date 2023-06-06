@@ -69,3 +69,11 @@ T* Array<T>::pop() {
     _size -= 1;
     return element;
 }
+
+template <typename T>
+void Array<T>::eliminate(size_t index) {
+    for (size_t i = index; i < _size - 2; i++) {
+        _data[i] = _data[i + 1];
+    }
+    _size =- 1;
+}
