@@ -62,3 +62,10 @@ void Array<T>::preppend(T* element) {
     // Just insert the element at index 0.
     insert(element, 0);
 }
+
+template <typename T>
+T* Array<T>::pop() {
+    T *element = _data[_size];
+    _size -= 1;
+    return element;
+}

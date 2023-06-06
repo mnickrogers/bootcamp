@@ -33,6 +33,8 @@ private:
     T*              _data[];
 
     // Resize the array.
+    // If the new size is greater than the current size, then double it.
+    // If the new size is less than 1/2 the current size, then shrink it by 1/2.
     void resize(size_t newCapacity);
     // Scans the array for null pointers and shrinks the array by removing them.
 };
