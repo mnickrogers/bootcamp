@@ -90,3 +90,16 @@ size_t Array<T>::find(T* element) const {
     }
     return index;
 }
+
+template <typename T>
+void Array<T>::remove(T* element) {
+    // 1st, find the index for this element. If the index is -1, return.
+    size_t index = find(element);
+
+    if (index == -1) {
+        return;
+    }
+
+    // 2nd, remove the element at this index.
+    eliminate(index);
+}
