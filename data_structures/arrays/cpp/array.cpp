@@ -103,3 +103,13 @@ void Array<T>::remove(T* element) {
     // 2nd, remove the element at this index.
     eliminate(index);
 }
+
+template <typename T>
+void Array<T>::resize(size_t newCapacity) {
+    T* newArray = T[newCapacity];
+    for (size_t i = 0; i < newCapacity; i++) {
+        newArray[i] = _data[i];
+    }
+    delete [] _data;
+    _data = newArray;
+}
