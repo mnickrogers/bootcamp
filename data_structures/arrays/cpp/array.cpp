@@ -56,3 +56,9 @@ void Array<T>::insert(T* element, size_t index) {
 
     _data[index] = element;
 }
+
+template <typename T>
+void Array<T>::preppend(T* element) {
+    // Just insert the element at index 0.
+    insert(element, 0);
+}
