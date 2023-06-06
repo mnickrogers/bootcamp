@@ -27,7 +27,7 @@ bool Array<T>::isEmpty() const {
 
 template <typename T>
 T* Array<T>::atIndex(size_t index) const {
-    assert(index < size);
+    assert(index < _size);
     return _data[index];
 }
 
@@ -51,7 +51,7 @@ void Array<T>::insert(T* element, size_t index) {
     // Size is number of elements. We want the index of the last element, so for a 0-indexed array, that's size-1.
     // Start at the end of the list and walk back, moving each element over.
     for (size_t i = _size - 1; i >= index; i--) {
-        _data[i + 1] = data[i];
+        _data[i + 1] = _data[i];
     }
 
     _data[index] = element;
@@ -76,4 +76,11 @@ void Array<T>::eliminate(size_t index) {
         _data[i] = _data[i + 1];
     }
     _size =- 1;
+}
+
+template <typename T>
+size_t Array<T>::find(T* element) const {
+    size_t index(0);
+    for (size_t i = 0; i < _size; i++) {
+    }
 }

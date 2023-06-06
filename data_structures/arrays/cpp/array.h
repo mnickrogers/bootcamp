@@ -22,10 +22,10 @@ public:
     T* pop();
     // Deletes the element at a given index. Shrinks the array accordingly.
     void eliminate(size_t index);
-    // Searches for a given item, then removes it.
-    void remove(T* element);
     // Finds an item and returns its index. Returns -1 if it's not found.
     size_t find(T* element) const;
+    // Searches for a given item, then removes it.
+    void remove(T* element);
 
 private:
     size_t          _size;
