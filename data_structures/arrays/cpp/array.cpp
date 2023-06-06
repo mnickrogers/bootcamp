@@ -80,7 +80,13 @@ void Array<T>::eliminate(size_t index) {
 
 template <typename T>
 size_t Array<T>::find(T* element) const {
-    size_t index(0);
+    size_t index(-1);
     for (size_t i = 0; i < _size; i++) {
+        if (_data[i] == element) {
+            index = i;
+            // We will return the index of the first match.
+            break;
+        }
     }
+    return index;
 }
