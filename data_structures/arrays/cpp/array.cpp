@@ -116,14 +116,15 @@ void Array<T>::resize(size_t newCapacity) {
 
 template <typename T>
 T& Array<T>::operator[](size_t index) const {
-    assert(i >= 0 && i <= _size);
-    return _data[i];
+    assert(index >= 0 && index <= _size);
+    return _data[index];
 }
 
 template <typename T>
 std::ostream& operator<<(std::ostream& os, Array<T>& array) {
     for (size_t i = 0; i < array->size(); i++) {
-        // Need to override [] operator.
+        os << array[i] << " ";
     }
+    os << std::endl;
     return os;
 }
