@@ -13,6 +13,11 @@ def merge(nums1, m, nums2, n):
             nums1[p3] = nums1[p1]
             p1 -= 1
         p3 -= 1
+
+    while p2 > 0:
+        nums1[p3] = nums2[p2]
+        p2 -= 1
+        p3 -= 1
         
     return nums1
 
